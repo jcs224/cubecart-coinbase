@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * CubeCart v6
+ * ========================================
+ * CubeCart is a registered trade mark of CubeCart Limited
+ * Copyright CubeCart Limited 2014. All rights reserved.
+ * UK Private Limited Company No. 5323904
+ * ========================================
+ * Web:   http://www.cubecart.com
+ * Email:  sales@devellion.com
+ * License:  GPL-2.0 http://opensource.org/licenses/GPL-2.0
+-->
+<definitions version="1.0">
+ <group name="coinbase">
+   <string name="module_description"><![CDATA[A payment processor for Bitcoins, using Coinbase]]></string>
+   <string name="module_title"><![CDATA[Coinbase]]></string>
+   <string name="api_key"><![CDATA[Coinbase API Key]]></string>
+   <string name="api_secret"><![CDATA[Coinbase API Secret]]></string>
+ </group>
+</definitions>
