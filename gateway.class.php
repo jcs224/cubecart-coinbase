@@ -12,25 +12,25 @@ class Gateway {
   private $code;
   private $order_number;
 
-	public function __construct($module = false, $basket = false) {
-      $this->_module = $module;
-      $this->_basket =& $GLOBALS['cart']->basket;
-      $this->_config =& $GLOBALS['config'];
+  public function __construct($module = false, $basket = false) {
+    $this->_module = $module;
+    $this->_basket =& $GLOBALS['cart']->basket;
+    $this->_config =& $GLOBALS['config'];
 
-      $default_currency = $GLOBALS['config']->get('config', 'default_currency');
-      $total = strval($this->_basket['total']);
-      $this->order_number = strval($this->_basket['cart_order_id']);
+    $default_currency = $GLOBALS['config']->get('config', 'default_currency');
+    $total = strval($this->_basket['total']);
+    $this->order_number = strval($this->_basket['cart_order_id']);
 
-      $this->coinbase = Coinbase::withApiKey($this->_module['api_key'], $this->_module['api_secret']);
+    $this->coinbase = Coinbase::withApiKey($this->_module['api_key'], $this->_module['api_secret']);
 
-      $response = $this->coinbase->createButton("Order ".$this->order_number, $total, $default_currency, $this->order_number, array(
-        "success_url" => $GLOBALS['storeURL'].'/index.php?_g=rm&type=gateway&cmd=process&module=Bitcoin',
-        "cancel_url" => $GLOBALS['storeURL'].'/index.php?_g=rm&type=gateway&cmd=process&module=Bitcoin',
-        "auto_redirect" => true
-      ));
+    $response = $this->coinbase->createButton("Order ".$this->order_number, $total, $default_currency, $this->order_number, array(
+      "success_url" => $GLOBALS['storeURL'].'/index.php?_g=rm&type=gateway&cmd=process&module=Bitcoin',
+      "cancel_url" => $GLOBALS['storeURL'].'/index.php?_g=rm&type=gateway&cmd=process&module=Bitcoin',
+      "auto_redirect" => true
+    ));
 
-      $this->code = $response->button->code;
-	}
+    $this->code = $response->button->code;
+  }
 
   public function transfer() {
     $transfer	= array(
