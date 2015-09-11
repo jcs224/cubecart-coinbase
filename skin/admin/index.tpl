@@ -32,6 +32,7 @@
 			<div><label for="description">{$LANG.common.description} *</label><span><input name="module[desc]" id="description" class="textbox" type="text" value="{$MODULE.desc}" /></span></div>
       <div><label for="api_key">{$LANG.coinbase.api_key}</label><span><input name="module[api_key]" id="api_key" class="textbox" type="password" value="{$MODULE.api_key}" /></span></div>
       <div><label for="api_secret">{$LANG.coinbase.api_secret}</label><span><input name="module[api_secret]" id="api_secret" class="textbox" type="password" value="{$MODULE.api_secret}" /></span></div>
+			<div><label for="status">{$LANG.coinbase.sandbox}</label><span><input type="hidden" name="module[sandbox]" id="sandbox" class="toggle" value="{$MODULE.sandbox}" /></span></div>
   		</fieldset>
 
 

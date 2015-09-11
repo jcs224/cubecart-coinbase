@@ -16,5 +16,6 @@
    <string name="module_title"><![CDATA[Coinbase]]></string>
    <string name="api_key"><![CDATA[Coinbase API Key]]></string>
    <string name="api_secret"><![CDATA[Coinbase API Secret]]></string>
+   <string name="sandbox"><![CDATA[Sandbox]]></string>
  </group>
 </definitions>

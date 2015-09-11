@@ -1,3 +1,0 @@
-[submodule "test/simpletest"]
-	path = test/simpletest
-	url = https://github.com/git-mirror/simpletest
