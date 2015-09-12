@@ -13,20 +13,15 @@ class CoinbaseAPI {
     public function call($function, $request_type = "GET", $fields = null) {
         $url = "https://api." . $this->coinbaseUrl . ".com/v2/" . $function;
         $time = time();
-
-        if ($fields) {
-            $message = $time . $request_type . "/v2/" . $function . json_encode($fields);
-        } else {
-            $message = $time . $request_type . "/v2/" . $function;
-        }
-
-        $signature = hash_hmac("sha256", $message, $this->apiSecret);
+        $fields_json = null;
+        $message = $time . $request_type . "/v2/" . $function;
 
         if ($fields) {
             $fields_json = json_encode($fields);
-        } else {
-            $fields_json = null;
+            $message .= $fields_json;
         }
+
+        $signature = hash_hmac("sha256", $message, $this->apiSecret);
 
         $curl = new Curl();
         $curl->setHeader("Content-Type", "application/json");

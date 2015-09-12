@@ -33,7 +33,6 @@ class Gateway {
   }
 
   public function transfer() {
-
     $return_url = $GLOBALS['storeURL'] . '/index.php?_g=rm&type=gateway&cmd=process&module=Bitcoin';
     $fields = [
       "amount" => $this->total,
@@ -70,10 +69,6 @@ class Gateway {
   }
 
   public function process() {
-//    $coinbase_orders = $this->coinbase->call("checkouts/" . $this->code . "/orders");
-
-//    $coinbase_order = $coinbase_orders->data[0];
-
     $coinbase_order = $this->coinbase->call("orders/" . $_GET["order"]["uuid"])->data;
 
     $order = Order::getInstance();
