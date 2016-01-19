@@ -34,14 +34,14 @@ class Gateway {
 
   public function transfer() {
     $return_url = $GLOBALS['storeURL'] . '/index.php?_g=rm&type=gateway&cmd=process&module=Bitcoin';
-    $fields = [
+    $fields = array(
       "amount" => $this->total,
       "currency" => $this->default_currency,
       "name" => $this->order_number,
       "success_url" => $return_url,
       "cancel_url" => $return_url,
       "auto_redirect" => true
-    ];
+    );
 
     $response_checkout = $this->coinbase->call("checkouts", "POST", $fields);
     $checkout_id = $response_checkout->data->id;
