@@ -17,7 +17,7 @@
 	<mobile_optimized>true</mobile_optimized>
 	<name><![CDATA[Bitcoin (Coinbase)]]></name>
 	<description><![CDATA[Coinbase Bitcoin Payment Gateway]]></description>
-	<version>2.0.0</version>
+	<version>2.0.1</version>
 	<minVersion>5.0.0</minVersion>
 	<maxVersion>6.*.*</maxVersion>
 	<creator><![CDATA[Joe Sweeney]]></creator>
