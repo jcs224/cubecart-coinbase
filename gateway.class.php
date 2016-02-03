@@ -46,12 +46,12 @@ class Gateway {
     $response_checkout = $this->coinbase->call("checkouts", "POST", $fields);
     $checkout_id = $response_checkout->data->id;
 
-    $transfer = [
+    $transfer = array(
       'action' => 'https://' . $this->cb_url . '.com/checkouts/' . $checkout_id,
       'method' => 'get',
       'target' => '_self',
       'submit' => 'auto',
-    ];
+    );
 
     return $transfer;
   }
